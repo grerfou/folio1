@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="content parent">
+
+  <div class="custom-cursor"></div>
+
+    <div class="child">
+        <div class="flex-container">
+            <div class="flex-item">
+                <h1 class="name">Benoit Fage</h1>
+                <h4 class="mail">benoit.fage@icloud.com</h4>
+                <h4 class="num">06.18.96.31.78</h4>
+            </div>
+            <div class="flex-item">
+
+            </div>
+        </div>
+    </div>
+
+
+    <Div class="childone"></div>
+
+ 
+    <Div cxlass="childto">
+        <div class="h3-container">
+            <a href="./Particles.html"><h3 id="Particles">Book's Particles</h3></a>
+            <a href="./Turing.html"><h3 id="glass">Turing Glasses</h3></a>
+            <a href="./Molding.html"><h3 id="mold">Self-molding</h3></a>
+            <a href="./Ambient.html"><h3 id="Exp">Ambient-Exp</h3></a>
+            <a href="./Ant.html"><h3 id="Ant">Ant_footprint</h3></a>
+            <a href="./Organism.html"><h3 id="Organism">Whether_Organism</h3></a>
+            <h3>Room Tour</h3>
+        </div>
+    </div>
+
+
+    <div class="childtree">
+        <img id="image" class="responsive-image" src="">
+    </div>
+    
+    <script type="module" src="./assets/main.js"></script>
+    <script type="module" src="./assets/utils.js"></script>
+</body>
+</html>
