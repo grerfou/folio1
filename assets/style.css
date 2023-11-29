@@ -36,7 +36,12 @@ video{
     z-index: -1;
     width: 100%;
     height: auto;
-    position: relative;   
+    position: relative;
+}
+
+.cross {
+    max-height: 0px; 
+    width: auto;
 }
 
 .custom-cursor {
@@ -68,6 +73,7 @@ video{
 
 .childto {
     font-family: Cotham;
+    overflow: auto;
     font-size: 5rem;
     border-right: 2px solid black;
     grid-row: 1 / span 2; /* Utilise deux rangées */
@@ -75,15 +81,10 @@ video{
 
 .childtree {
     display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    border-right: 2px solid black;
+    justify-content: center; 
+    align-items: center; 
 }
 
-.childtree img {
-    max-width: 100%; /* La largeur de l'image est de 100% du conteneur */
-    max-height: 100%; /* La hauteur de l'image est de 100% du conteneur */
-}
 
 .h3-container {
     display: flex;
@@ -91,17 +92,18 @@ video{
 }
 
 h3 {
+    font-size: 5vw;
     margin: 0;
-    padding: 10px; /* Espace intérieur pour le contenu */
+    padding: 10px; 
     border-bottom: 2px solid black;
     display: flex;
-    align-items: center; /* Centrer le contenu verticalement */
-    transition: height 10.1s ease; /* Transition fluide de la hauteur */
+    align-items: center; 
+    transition: height 10.1s ease; 
 }
 
-/* Effet hover pour agrandir la hauteur */
+
 h3:hover {
-    height: 12vh; /* Hauteur agrandie au survol */
+    height: 12vh; 
 }
 
 .flex-container {
@@ -114,10 +116,9 @@ h3:hover {
 }
 
 .responsive-image {
-    max-width: 100%;
-    max-height: 100%;
-    width: 60vw;
-    height: auto;
+    max-height: 110%;
+    width: auto;
+    min-width: 100%;
 }
 
 .childtree {
@@ -133,12 +134,16 @@ h3:hover {
 
 
 
+
+
+
 /* ------------------------------------------------------------------------- */
 
 /* css project pages */
 
 .contenu {
     font-family: Office_code_pro;
+    overflow: hidden;
     margin: 0;
     padding: 0;
     display: grid;
@@ -202,7 +207,7 @@ h3:hover {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Deux colonnes égales */
+    grid-template-columns: 1fr 1fr; 
     border-left: 2px solid black;
     border-right: 2px solid black;
     border-top: 2px solid black;
@@ -219,3 +224,4 @@ h3:hover {
 #image{
     border-radius: 0px 0px 20px 0px;
 }
+

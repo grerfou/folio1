@@ -342,7 +342,7 @@ function rotateModels() {
 
         if (loadedModel) {
             const model = loadedModel.model;
-            model.rotation.y += 0.01;  // Ajustez la vitesse de rotation si nécessaire
+            model.rotation.y += 0.01;  
         }
     });
 }
@@ -412,3 +412,5 @@ function animate() {
 }
 
 animate();
+
+
