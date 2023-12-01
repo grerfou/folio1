@@ -12,15 +12,6 @@ renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
 document.querySelector('.childone').appendChild(renderer.domElement);
 
 const controls = new OrbitControls(camera, renderer.domElement);
-let orbitControlsActive = false;
-
-controls.addEventListener('start', () => {
-    orbitControlsActive = true;
-});
-
-controls.addEventListener('end', () => {
-    orbitControlsActive = false;
-});
 
 const loader = new GLTFLoader();
 
@@ -42,7 +33,6 @@ const alignmentFactor = 3.5; // Facteur d'alignement
 const cohesionFactor = 0.1; // Facteur de cohésion
 const maxSpeed = 0.05; // Vitesse maximale
 
-// Limites de la boîte ronde
 const xMin = -4;
 const xMax = 4;
 const yMin = -4;
@@ -141,33 +131,33 @@ document.getElementById('Organism').addEventListener('mouseover', () => {
                     (Math.random() - 0.5) * maxSpeed * maxVelocity,
                     (Math.random() - 0.5) * maxSpeed * maxVelocity,
                     (Math.random() - 0.5) * maxSpeed * maxVelocity
-                    );
+                );
                     
-                    boidMesh.velocity = boidVelocity;
+                boidMesh.velocity = boidVelocity;
                     
-                    scene.add(boidMesh);
-                    boidMeshes.push(boidMesh);
+                scene.add(boidMesh);
+                boidMeshes.push(boidMesh);
                     
-                    // Supprimez les modèles actuels de la scène
-                    models.forEach((modelInfo) => {
-                        const { id } = modelInfo;
-                        const modelToRemove = scene.getObjectByName('currentModel');
-                        if (modelToRemove) {
-                            scene.remove(modelToRemove);
-                        }
-                    });
-                }
+                // Supprimez les modèles actuels de la scène
+                models.forEach((modelInfo) => {
+                    const { id } = modelInfo;
+                    const modelToRemove = scene.getObjectByName('currentModel');
+                    if (modelToRemove) {
+                        scene.remove(modelToRemove);
+                    }
+                });
+        }
+        animateBoids();
+        boidsActive = true;
+    }
+});
 
-                animateBoids();
-                boidsActive = true;
-            }
-        });
-        
+
         
 //_________________________________________________________-Boids-__________________________________________________________________
         
         
-document.getElementById('glass').addEventListener('mouseover', () => {
+document.getElementById('glass', 'mold', 'Exp', 'Ant').addEventListener('mouseover', () => {
     if (boidsActive) {
         boidMeshes.forEach((boid) => {
             scene.remove(boid);
@@ -176,37 +166,6 @@ document.getElementById('glass').addEventListener('mouseover', () => {
         boidsActive = false;
     }
 });
-
-document.getElementById('mold').addEventListener('mouseover', () => {
-    if (boidsActive) {
-        boidMeshes.forEach((boid) => {
-            scene.remove(boid);
-        });
-        boidMeshes.length = 0;
-        boidsActive = false;
-    }
-});
-
-document.getElementById('Exp').addEventListener('mouseover', () => {
-    if (boidsActive) {
-        boidMeshes.forEach((boid) => {
-            scene.remove(boid);
-        });
-        boidMeshes.length = 0;
-        boidsActive = false;
-    }
-});
-
-document.getElementById('Ant').addEventListener('mouseover', () => {
-    if (boidsActive) {
-        boidMeshes.forEach((boid) => {
-            scene.remove(boid);
-        });
-        boidMeshes.length = 0;
-        boidsActive = false;
-    }
-});
-
 
 const models = [
     {   
@@ -252,7 +211,6 @@ const models = [
         rotation : new THREE.Euler(0, 0, 0),
     },
 ];
-
 
 
 const loadedModels = {};
@@ -335,6 +293,8 @@ Promise.all(models.map(loadModel)).then(() => {
 
 
 
+
+
 function rotateModels() {
     models.forEach((modelInfo) => {
         const { id } = modelInfo;
@@ -346,6 +306,7 @@ function rotateModels() {
         }
     });
 }
+
 
 
 
@@ -386,7 +347,7 @@ Object.keys(imagePaths).forEach((elementId) => {
 });
 
 document.querySelectorAll('h3').forEach((element) => {
-    element.addEventListener('mouseout', hideImage);
+    window.addEventListener('mouseout', hideImage);
 });
 
 const handleResize = () => {
@@ -406,11 +367,13 @@ handleResize();
 function animate() {
     requestAnimationFrame(animate);
 
+    //event();
     controls.update();
     rotateModels(); // Appel de la fonction de rotation
     renderer.render(scene, camera);
 }
 
 animate();
+
 
 

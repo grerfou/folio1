@@ -8,6 +8,11 @@ document.addEventListener("mousemove", (e) => {
 });
 
 
+
+
+
+
+
 let originalChildToContent;
 let originalDataContainerContent;
 
@@ -19,7 +24,7 @@ const aboutp = document.querySelector('.aboutp');
 const aboutContentp = `
     <div>
         <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nulla tenetur quidem quos maiores tempore, libero eius doloribus at, iste deserunt recusandae debitis corporis ratione quas in possimus, architecto quia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, ducimus non velit debitis aperiam dolorum quisquam aliquam, quam voluptates quia laudantium beatae vero facilis. Fuga mollitia perferendis minima maxime impedit.
+        After two years of work-study training in the metal industry.I decided to go to a design school to discover a multitude of skills and open up to different applications.Today, after my three years at the school, I'd like to deepen my experimental and digital practice.
         </p>
     </div>
 `;
@@ -41,10 +46,9 @@ function captureHTMLContent(selector) {
 const capturedDataContainer = captureHTMLContent('.data-container');
 const capturedchildTo = captureHTMLContent('.childto');
 
-
 aboutp.addEventListener('click', function() {
     if (cross) {
-        cross.style.maxHeight = "2vh";
+        cross.style.maxHeight = "1.5vh";
         cross.style.zIndex = "30000";
     }
     if (childTo){
@@ -73,6 +77,7 @@ cross.addEventListener('click', function(event) {
             if (item.id === childTo.id) {
                 childTo.innerHTML = item.content;
                 childTo.removeAttribute('style');
+                location.reload(true);
             }
         });
     }
@@ -85,5 +90,3 @@ cross.addEventListener('click', function(event) {
         });
     }
 });
-
-

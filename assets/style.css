@@ -183,7 +183,9 @@ h3:hover {
 
 .data-explain{
     height: 50vh;
-    padding: 5vh;
+    padding-top: 3vh;
+    padding-right: 5vh;
+    padding-left: 5vh;
     text-align: justify;
 }
 
