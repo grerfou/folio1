@@ -171,42 +171,42 @@ document.getElementById('glass', 'mold', 'Exp', 'Ant').addEventListener('mouseov
 const models = [
     {   
         id: 'Particles', 
-        path: './data/object.glb',
+        path: 'data/object.glb',
         scale : new THREE.Vector3(0.02, 0.02, 0.02),
         position : new THREE.Vector3(0, 0, 0),
         rotation : new THREE.Euler(0, 90, Math.PI / 2),
     },
     { 
         id: 'glass', 
-        path: './data/diff.glb' ,
+        path: 'data/diff.glb' ,
         scale : new THREE.Vector3(1, 1, 1),
         position : new THREE.Vector3(0, 0, 0),
         rotation : new THREE.Euler(0, 90, Math.PI / 2),
     },
     {
         id: 'mold', 
-        path: './data/tree.glb',
+        path: 'data/tree.glb',
         scale : new THREE.Vector3(0.05, 0.05, 0.05),
         position : new THREE.Vector3(0, -1.2, 0),
         rotation : new THREE.Euler(0, 90, 0),
     },
     {
         id: 'Exp', 
-        path: './data/Ambient.glb',
+        path: 'data/Ambient.glb',
         scale : new THREE.Vector3(0.6, 0.6, 0.6),
         position : new THREE.Vector3(0.2, -1, 0),
         rotation : new THREE.Euler(0, 0, 0),
     },
     {
         id: 'Ant', 
-        path: './data/ant.glb',
+        path: 'data/ant.glb',
         scale : new THREE.Vector3(1.7, 1.7, 1.7),
         position : new THREE.Vector3(0, 0, 0),
         rotation : new THREE.Euler(80, -45, 0),
     },
     {
         id: 'room', 
-        path: './data/room.glb',
+        path: 'data/room.glb',
         scale : new THREE.Vector3(0.1, 0.1, 0.1),
         position : new THREE.Vector3(0, -1, 0),
         rotation : new THREE.Euler(0, 0, 0),
@@ -318,13 +318,13 @@ const image = document.getElementById('image');
 const imageContainer = document.getElementById('imageContainer');
 
 const imagePaths = {
-    'Particles': './data/0224.jpeg',
-    'glass': './data/untitled.jpg',
-    'mold': './data/pres.jpeg',
-    'Exp': './data/pres1.jpeg',
-    'Ant': './data/disp.png',
-    'Organism': './data/boid.png',
-    'room': './data/VetF.png'
+    'Particles': 'data/0224.jpeg',
+    'glass': 'data/untitled.jpg',
+    'mold': 'data/pres.jpeg',
+    'Exp': 'data/pres1.jpeg',
+    'Ant': 'data/disp.png',
+    'Organism': 'data/boid.png',
+    'room': 'data/VetF.png'
 };
 
 function showImage(elementId) {
